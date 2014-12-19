@@ -1,6 +1,6 @@
 ### Setting up CPBM SDK
 
-1. Download the CPBM sdk and extract cssdk-standard.jar
+1. Download the CPBM [sdk](http://www.betterbydesign.uk.com/download/cssdk-standard_2.3.0.zip) and extract cssdk-standard.jar
 
 2. Run the SDK jar to install jars and scripts to a directory
 
