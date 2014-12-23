@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Service>
     <Bootstrap>
-        <Id type="CLOUD" singleton="false" category="IAAS">com.company1.service1</Id>
+        <Id type="CLOUD" singleton="false" category="SAAS">com.shapeblue.cpbm.reporting</Id>
         <Connector ref="ShapeBlueCloudConnectorFactory" />
         <Image type="logo">logo.jpg</Image>
-        <Image type="banner">banner.png</Image>
-        <Vendor version="0.0.1-SNAPSHOT">Company1</Vendor>
-        <Locales>en_US, ja_JP, ko_KR</Locales>
+        <Image type="banner">logo.png</Image>
+        <Vendor version="1.0.0">ShapeBlue</Vendor>
+        <Locales>en_US</Locales>
         <Configuration>
-            <Property id="endpoint" type="URL" encrypted="false" validation="{&quot;required&quot;:true}" />
-            <Property id="username" type="String" encrypted="false" validation="{&quot;required&quot;:true}" />
-            <Property id="password" type="String" encrypted="true" validation="{&quot;required&quot;:true}" />
-            <Property id="accountid" type="Number" encrypted="false" validation="{&quot;required&quot;:true,&quot;digit&quot;:false,&quot;minlen&quot;:5,&quot;maxlen&quot;:10}" />
-            <Property id="country" type="String" encrypted="false" validation="{&quot;required&quot;:false}" />
+            <Property id="endpoint" type="URL" encrypted="false" validation="{'required':true}" />
+            <Property id="username" type="String" encrypted="false" validation="{'required':true}" />
+            <Property id="password" type="String" encrypted="true" validation="{'required':true}" />
+            <Property id="accountid" type="Number" encrypted="false" validation="{'required':true,'digit':false,'minlen':5,'maxlen':10}" />
+            <Property id="country" type="String" encrypted="false" validation="{'required':false}" />
         </Configuration>
         <AccountConfiguration>
-            <Property id="myAccountConfig1" type="String" encrypted="false" validation="{&quot;required&quot;:true}" />
-            <Property id="myAccountConfig2" type="String" encrypted="false" validation="{&quot;required&quot;:true}" />
+            <Property id="myAccountConfig1" type="String" encrypted="false" validation="{'required':true}" />
+            <Property id="myAccountConfig2" type="String" encrypted="false" validation="{'required':true}" />
         </AccountConfiguration>
     </Bootstrap>
     <AccountControls>
-        <Property id="myAccountControlProp1" type="Boolean" validation="{&quot;required&quot;:false}" />
-        <Property id="myAccountControlProp2" type="Integer" validation="{&quot;required&quot;:true}" />
+        <Property id="myAccountControlProp1" type="Boolean" validation="{'required':false}" />
+        <Property id="myAccountControlProp2" type="Integer" validation="{'required':true}" />
     </AccountControls>
     <ResourceMetadata>
         <ResourceType name="VirtualMachine" constraint="PER_USER" componentSelector="tiles.componentselector">
             <Properties editor="tiles.propertyselector">
-                <Property id="vmName" type="String" validation="{&quot;required&quot;:true}" />
-                <Property id="groupName" type="String" validation="{&quot;required&quot;:true}" />
+                <Property id="vmName" type="String" validation="{'required':true}" />
+                <Property id="groupName" type="String" validation="{'required':true}" />
             </Properties>
             <Component name="SO" discriminator="soId" reconfigurable="true" />
             <Component name="Template" discriminator="templateId" />
@@ -41,7 +41,7 @@
         </ResourceType>
         <ResourceType name="Network">
             <Properties>
-                <Property id="com.citrix.cloudplatform.iaas.adminkey" type="String" validation="{&quot;required&quot;:true}" />
+                <Property id="com.citrix.cloudplatform.iaas.adminkey" type="String" validation="{'required':true}" />
             </Properties>
             <Group name="NetworkOfferingGroup">
                 <Component name="NetworkOffering" discriminator="dummyDiscriminatorNetwork" />
