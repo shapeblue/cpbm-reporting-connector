@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.shapeblue</groupId>
 	<artifactId>com.shapeblue.cpbm.reporting</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>bundle</packaging>
 	<properties>
 		<org.springframework.version>3.0.7.RELEASE</org.springframework.version>
@@ -144,6 +144,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
 				<executions>
 					<execution>
 						<goals>
