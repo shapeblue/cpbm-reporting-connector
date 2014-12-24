@@ -11,8 +11,6 @@
             <Property id="endpoint" type="URL" encrypted="false" validation='{"required":true}' />
             <Property id="username" type="String" encrypted="false" validation='{"required":true}' />
             <Property id="password" type="String" encrypted="true" validation='{"required":true}' />
-            <Property id="accountid" type="Number" encrypted="false" validation='{"required":true,"digit":false,"minlen":5,"maxlen":10}' />
-            <Property id="country" type="String" encrypted="false" validation='{"required":false}' />
         </Configuration>
     </Bootstrap>
     <Roles>
