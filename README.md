@@ -15,3 +15,13 @@
 2. Import this project into STS (Eclipse based Spring IDE)
 
 3. Run mvn clean install once or through STS to setup the project (will take some time)
+
+### Install and Usage
+
+After building the jar, put the jar file in /usr/share/vts3/connector_ext and put
+the following line in the `com.citrix.cpbm.connector.ext.plan` file:
+
+    <artifact type="bundle" name="com.shapeblue.cpbm.reporting" version="[1.0.0, 2.0.0)"/>
+
+Now, restart cloud-portal service. In the logs (/var/log/cloud/portal/) you should
+see the new plugin installed/setup.
