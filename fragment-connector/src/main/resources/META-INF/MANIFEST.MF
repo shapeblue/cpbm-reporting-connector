@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Name: com.shapeblue.reporting.fragment
+Bundle-Vendor: com.shapeblue
+Fragment-Host: citrix.cpbm.portal.core;bundle-version="[2.0.0,3.0.0)"
+Bundle-Version: 1.1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.shapeblue.reporting.fragment
+Application-ResourceVersion: 0.0.1

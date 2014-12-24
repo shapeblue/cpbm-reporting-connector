@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- Copyright (C) 2011 Cloud.com, Inc.  All rights reserved. -->
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+ "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+  <definition name="com.shapeblue.reporting.fragment.example" template="/WEB-INF/jsp/com.shapeblue.reporting.fragment/example.jsp" />
+
+</tiles-definitions>
