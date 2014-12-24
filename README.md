@@ -4,7 +4,7 @@
 
 2. Run the SDK jar to install jars and scripts to a directory
 
-3. Go to the directory, fix CRLF in bin/ using sed -i 's/\r//g' bash-script
+3. Go to the directory, fix CRLF in bin/ using sed -i 's/\r//g' {script} or tr -d '\r' < bash-script.sh > final-script.sh
 
 4. Run the script to install the jars in your local Maven ~/.m2
 
