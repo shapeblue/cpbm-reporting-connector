@@ -1,0 +1,4 @@
+*jar
+*class
+fragment-connector/target
+service-connector/target
