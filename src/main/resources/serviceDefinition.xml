@@ -3,70 +3,18 @@
     <Bootstrap>
         <Id type="CLOUD" singleton="false" category="SAAS">com.shapeblue.cpbm.reporting</Id>
         <Connector ref="ShapeBlueCloudConnectorFactory" />
-        <Image type="logo">logo.jpg</Image>
+        <Image type="logo">logo.png</Image>
         <Image type="banner">logo.png</Image>
         <Vendor version="1.0.0">ShapeBlue</Vendor>
         <Locales>en_US</Locales>
         <Configuration>
-            <Property id="endpoint" type="URL" encrypted="false" validation="{'required':true}" />
-            <Property id="username" type="String" encrypted="false" validation="{'required':true}" />
-            <Property id="password" type="String" encrypted="true" validation="{'required':true}" />
-            <Property id="accountid" type="Number" encrypted="false" validation="{'required':true,'digit':false,'minlen':5,'maxlen':10}" />
-            <Property id="country" type="String" encrypted="false" validation="{'required':false}" />
+            <Property id="endpoint" type="URL" encrypted="false" validation='{"required":true}' />
+            <Property id="username" type="String" encrypted="false" validation='{"required":true}' />
+            <Property id="password" type="String" encrypted="true" validation='{"required":true}' />
+            <Property id="accountid" type="Number" encrypted="false" validation='{"required":true,"digit":false,"minlen":5,"maxlen":10}' />
+            <Property id="country" type="String" encrypted="false" validation='{"required":false}' />
         </Configuration>
-        <AccountConfiguration>
-            <Property id="myAccountConfig1" type="String" encrypted="false" validation="{'required':true}" />
-            <Property id="myAccountConfig2" type="String" encrypted="false" validation="{'required':true}" />
-        </AccountConfiguration>
     </Bootstrap>
-    <AccountControls>
-        <Property id="myAccountControlProp1" type="Boolean" validation="{'required':false}" />
-        <Property id="myAccountControlProp2" type="Integer" validation="{'required':true}" />
-    </AccountControls>
-    <ResourceMetadata>
-        <ResourceType name="VirtualMachine" constraint="PER_USER" componentSelector="tiles.componentselector">
-            <Properties editor="tiles.propertyselector">
-                <Property id="vmName" type="String" validation="{'required':true}" />
-                <Property id="groupName" type="String" validation="{'required':true}" />
-            </Properties>
-            <Component name="SO" discriminator="soId" reconfigurable="true" />
-            <Component name="Template" discriminator="templateId" />
-            <Component name="ISO" discriminator="templateId" />
-            <Component name="hypervisor" discriminator="hypervisor" />
-            <Component name="dummyComponentOne" discriminator="dummyDiscriminatorOne" />
-            <Component name="dummyComponentThree" discriminator="dummyDiscriminatorThree" />
-            <Generates>
-                <Usage>RUNNING_VM</Usage>
-            </Generates>
-        </ResourceType>
-        <ResourceType name="Network">
-            <Properties>
-                <Property id="com.citrix.cloudplatform.iaas.adminkey" type="String" validation="{'required':true}" />
-            </Properties>
-            <Group name="NetworkOfferingGroup">
-                <Component name="NetworkOffering" discriminator="dummyDiscriminatorNetwork" />
-            </Group>
-            <Generates>
-                <Usage>NETWORK_BYTES_IN</Usage>
-                <Usage>NETWORK_BYTES_OUT</Usage>
-            </Generates>
-        </ResourceType>
-        <UsageType name="RUNNING_VM" uom="Compute-Hours">
-            <Discriminator>CPU</Discriminator>
-            <Discriminator>RAM</Discriminator>
-        </UsageType>
-        <UsageType name="NETWORK_BYTES_IN" uom="Bytes" />
-        <UsageType name="NETWORK_BYTES_OUT" uom="Bytes" />
-        <Uom raw="Compute-Hours">
-            <Scale name="Compute-Days" conversionFactor="24" />
-        </Uom>
-        <Uom raw="Bytes">
-            <Scale name="GB" conversionFactor="1073741824" default="true" />
-            <Scale name="TB" conversionFactor="1099511627776" />
-        </Uom>
-        <Filter name="zoneId" />
-        <Filter name="dummyFilter" />
-    </ResourceMetadata>
     <Roles>
         <Role name="ROLE_CLOUD_MANAGEMENT1" scope="GLOBAL_ADMIN" />
         <Role name="ROLE_ACCOUNT_CLOUD_MANAGEMENT1" scope="TENANT_ADMIN" />
