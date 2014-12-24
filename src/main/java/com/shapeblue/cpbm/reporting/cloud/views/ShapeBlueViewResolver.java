@@ -1,5 +1,6 @@
 package com.shapeblue.cpbm.reporting.cloud.views;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.citrix.cpbm.platform.spi.Connector;
@@ -20,8 +21,10 @@ public class ShapeBlueViewResolver implements ViewResolver {
 
 	@Override
 	public List<View> listResourceViews(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		View returnView = new View("CloudStack", "http://google.com", View.ViewMode.IFRAME);
+		List views = new ArrayList();
+		views.add(returnView);
+		return views;
 	}
 
 	@Override
@@ -38,8 +41,8 @@ public class ShapeBlueViewResolver implements ViewResolver {
 
 	@Override
 	public View resolveUserSettingsView(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		View returnView = new View("USERSETTINGSVIEW", "/portal/portal/connector_resources/shapebluereports_fragment/reports?" + "tenant=" + user.getTenant().getUuid(), View.ViewMode.IFRAME);
+		return returnView;
 	}
 
 	@Override
