@@ -21,7 +21,7 @@ public class ShapeBlueViewResolver implements ViewResolver {
 
 	@Override
 	public List<View> listResourceViews(User user) {
-		View returnView = new View("CloudStack", "http://google.com", View.ViewMode.IFRAME);
+		View returnView = new View("Reports", "http://google.com", View.ViewMode.IFRAME);
 		List views = new ArrayList();
 		views.add(returnView);
 		return views;
@@ -29,14 +29,14 @@ public class ShapeBlueViewResolver implements ViewResolver {
 
 	@Override
 	public View resolveSubscriptionDetailView(Subscription subscription) {
-		// TODO Auto-generated method stub
-		return null;
+		View returnView = new View("USERSETTINGSVIEW", "/portal/portal/connector_resources/shapebluereports_fragment/reports?" + "tenant=" + subscription.getTenant().getUuid(), View.ViewMode.IFRAME);
+		return returnView;
 	}
 
 	@Override
 	public View resolveAccountSettingsView(Tenant tenant) {
-		// TODO Auto-generated method stub
-		return null;
+		View returnView = new View("USERSETTINGSVIEW", "/portal/portal/connector_resources/shapebluereports_fragment/reports?" + "tenant=" + tenant.getUuid(), View.ViewMode.IFRAME);
+		return returnView;
 	}
 
 	@Override
